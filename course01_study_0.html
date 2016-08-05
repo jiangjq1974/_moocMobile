@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Input buttons - jQuery Mobile Demos</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.1.min.css">
+<link rel="stylesheet" href="_assets/css/jqm-demos.css">
+<script src="js/jquery.js"></script>
+<script src="_assets/js/index.js"></script>
+<script src="js/jquery.mobile-1.4.1.min.js"></script>
+</head>
+<body>
+<div data-role="page" class="jqm-demos" data-quicklinks="true" >
+    <div data-role="header" data-position="fixed"> <a href="course01_study.html" class="ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars  ui-icon-back ui-btn-left"></a>
+        <h1>iOS应用开发</h1>
+        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-right">Menu</a> </div>
+    <!-- /header -->
+    <h3>第一章 第一节 iOS的历史</h3>
+	<div  data-theme="a" data-inset="false" >
+		<ul data-role="listview" data-inset="true">
+			<li><a href="course01_study_1_video.html"><img class="ui-li-icon ui-corner-none" alt="France" src="images/class_icon_2.png">视频</a></li>
+			<li><a href="#"><img class="ui-li-icon" alt="Germany" src="images/class_icon_3.png">资源</a></li>
+			<li><a href="#"><img class="ui-li-icon" alt="Great Britain" src="images/class_icon_4.png">讨论</a></li>
+			<li><a href="#"><img class="ui-li-icon" alt="Finland" src="images/class_icon_1.png">节练习</a></li>
+		</ul>
+	   
+    </div>
+    <!--/demo-html -->
+    <div data-role="panel" class="jqm-navmenu-panel" data-position="right" data-display="overlay" data-theme="a">
+        <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+            <li data-filtertext="demos homepage" data-icon="home"><a href="main.html" data-ajax="false">我的课程</a></li>
+            <li data-filtertext="introduction overview getting started"><a href="#" data-ajax="false">关于</a></li>
+            <li data-filtertext=""><a href="login.html" data-ajax="false">退出</a></li>
+        </ul>
+    </div>
+    <!-- /content -->
+    <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+        <h5>Copyright(C)2014 
+            大连东软信息学院</h5>
+    </div>
+    <!-- /footer -->
+    <!-- /panel -->
+    <!-- TODO: This should become an external panel so we can add input to markup (unique ID) -->
+    <div data-role="panel" class="jqm-search-panel" data-position="right" data-display="overlay" data-theme="a">
+        <div class="jqm-search">
+            <ul class="jqm-list" data-filter-placeholder="Search ..." data-filter-reveal="true">
+                <li data-filtertext="demos" data-icon="home"><a href="main.html">Home</a></li>
+                <li data-filtertext="ios"	><a href="course01.html" data-ajax="false">iOS应用程序开</a></li>
+                <li data-filtertext="android"	><a href="course01.html" data-ajax="false">Android应用开发</a></li>
+				<li data-filtertext="web 移动 mobile"><a href="course01.html" data-ajax="false">移动Web开发</a></li>
+				<li data-filtertext="web 移动 mobile"><a href="course01.html" data-ajax="false">Mobile游戏开发</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- /panel -->
+</div>
+<!-- /page -->
+</body>
+</html>

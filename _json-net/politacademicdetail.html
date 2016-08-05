@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>中国引航网</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.3.2.min.css">
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.mobile-1.3.2.min.js"></script>
+<script>
+	function init() { 
+		$.ajaxSetup({ cache: false });
+						
+		var url = "http://www.dlintnav.com/gonggao/datapolit.php?category=4&callback=?";  		
+		$.getJSON(url, function(data){ 
+			var htmlul = [];			
+			$.each(data, function(index, d){  	         
+				htmlul.push('<li><a href="politstyledetail.html?id='+d.id+'"  data-ajax="false">'+d.title+'</a</li>\n');								  
+			});	
+						
+			//alert(htmlul.join(''));
+			$("#my-listview").append( htmlul ).listview('refresh');	
+	
+			
+		}).error(function(jqXHR, textStatus, errorThrown){
+			 //alert("jqXHR:"+jqXHR.responseText+"\nerrorThrown:"+errorThrown) ;
+			//alert("error occurred!");
+		});
+		
+	}
+</script>
+
+<style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      font: normal 15px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #232525;
+      padding-top:70px;
+    }
+
+    #slides,
+    #slides2,
+    #slides3 {
+      display: none;
+      margin-bottom:-20px;
+    }
+
+    .slidesjs-navigation {
+      margin-top:3px;
+    }
+
+    .slidesjs-previous {
+      margin-right: 5px;
+      float: left;
+    }
+
+    .slidesjs-next {
+      margin-right: 5px;
+      float: left;
+    }
+
+    .slidesjs-pagination {
+      margin: 6px 0 0;
+      float: right;
+      list-style: none;
+    }
+
+    .slidesjs-pagination li {
+      float: left;
+      margin: 0 1px;
+    }
+
+    .slidesjs-pagination li a {
+      display: block;
+      width: 13px;
+      height: 0;
+      padding-top: 13px;
+      background-image: url(img/pagination.png);
+      background-position: 0 0;
+      float: left;
+      overflow: hidden;
+    }
+
+    .slidesjs-pagination li a.active,
+    .slidesjs-pagination li a:hover.active {
+      background-position: 0 -13px
+    }
+
+    .slidesjs-pagination li a:hover {
+      background-position: 0 -26px
+    }
+
+    a:link,
+    a:visited {
+      color: #333
+    }
+
+    a:hover,
+    a:active {
+      color: #9e2020
+    }
+
+    .navbar {
+      overflow: hidden
+    }
+  </style>
+  <!-- End SlidesJS Optional-->
+
+  <!-- SlidesJS Required: These styles are required if you'd like a responsive slideshow -->
+  <style>
+    #slides {
+      display: none
+    }
+
+    .container {
+      margin: 0 auto
+    }
+
+    /* For tablets & smart phones */
+    @media (max-width: 767px) {
+      body {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .container {
+        width: auto
+      }
+    }
+
+    /* For smartphones */
+    @media (max-width: 480px) {
+      .container {
+        width: auto
+      }
+    }
+
+    /* For smaller displays like laptops */
+    @media (min-width: 768px) and (max-width: 979px) {
+      .container {
+        width: 724px
+      }
+    }
+
+    /* For larger displays */
+    @media (min-width: 1200px) {
+      .container {
+        width: 1170px
+      }
+    }
+  </style>
+  <!-- SlidesJS Required: -->
+
+</head>
+
+<body  onload="init()">
+<div data-role="page" class="jqm-demos" data-theme="b">
+    <div data-role="header" data-position="fixed" data-theme="b" >
+    	<a href="#" data-role="button" data-rel="back" data-ajax="false">返回</a>
+        <h2>中国引航网</h2>
+    </div>
+    <!-- /header -->
+     <div class="container">
+        <div id="slides2">
+          <img src="img/example-slide-1.jpg" alt="Photo">
+          <img src="img/example-slide-2.jpg" alt="Photo">
+          <img src="img/example-slide-3.jpg" alt="Photo">
+          <img src="img/example-slide-4.jpg" alt="Photo">
+          <img src="img/example-slide-5.jpg" alt="Photo">		
+    
+        </div>
+    </div>
+    <!-- End SlidesJS Required: Start Slides -->
+    
+    <!-- SlidesJS Required: Link to jQuery -->
+<!--    <script src="js/jquery-1.9.1.min.js"></script>
+-->    <!-- End SlidesJS Required -->
+    
+    <!-- SlidesJS Required: Link to jquery.slides.js -->
+    <script src="js/jquery.slides.min.js"></script>
+    <!-- End SlidesJS Required -->
+    
+    <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
+    <script>
+    $(function() {
+      $('#slides').slidesjs({
+        width: 940,
+        height: 528,
+        navigation: false
+      });
+    
+      /*
+        To have multiple slideshows on the same page
+        they just need to have separate IDs
+      */
+      $('#slides2').slidesjs({
+        width: 940,
+        height: 528,
+        navigation: false,
+        start: 1,
+        play: {
+          auto: true
+        }
+      });
+    
+      $('#slides3').slidesjs({
+        width: 940,
+        height: 528,
+        navigation: false
+      });
+    });
+    </script>
+    <!-- /flash -->
+    
+    <div role="main" class="ui-content" >
+    <h2 align="left">【学术研讨】</h2>
+      
+    <ul data-role="listview" data-theme="c" id="my-listview">
+          
+          
+             
+                </ul>
+    </div>
+    <!-- /content -->
+    
+    <div data-role="footer" data-tap-toggle="false" data-theme="b" data-position="fixed" >
+        <div data-role="navbar" >
+        	<ul>
+                <li><a href="main.html" data-icon="home" data-ajax="false">主页</a></li>
+                <li><a href="politnews.html" data-icon="star" data-ajax="false">引航新闻</a></li>
+                <li><a href="politannouncement.html" data-icon="info" data-ajax="false">信息公告</a></li>
+                <li><a href="contactus.html" data-icon="gear" data-ajax="false" >联系我们</a></li>
+          	</ul>
+        </div>
+    </div>
+    <!-- /footer --> 
+    
+</div>
+<!-- /page -->
+</body>
+</html>
